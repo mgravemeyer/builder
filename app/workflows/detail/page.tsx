@@ -10,7 +10,7 @@ const Page = () => {
             <div className='w-full h-full bg-bDark flex justify-between'>
                 <Connectors/>
                 <Grid/>
-                <Detail/>
+                {/*<Detail/>*/}
             </div>
         </div>
     )
