@@ -4,7 +4,7 @@ import { useState } from 'react';
 type Tab = {
     id: string,
     name: string,
-    content: JSX.Element[]
+    content: JSX.Element
 }
 
 type TabBarProps = {
@@ -33,7 +33,10 @@ const TabBar = ({ tabs } : TabBarProps) => {
                     )
                 })}
             </div>
-            <div className='w-full h-[1px] bg-bBright h-[0.5px]'></div>
+            <div className='w-full h-1 bg-bPurple h-[2px]'></div>
+            {tabs.filter(tab => tab.id === selected).map(tab => {
+                return (tab.content)
+            })}
         </div>
     )
 }
