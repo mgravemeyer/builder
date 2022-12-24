@@ -18,7 +18,7 @@ const SearchInput = ({ placeholder }: SearchInputProps) => {
                 </svg>
             </div>
             <input type="search" id="search"
-                   className="w-full p-4 pl-10 text-sm rounded-full bg-bButtonDark text-bBright"
+                   className="w-full p-4 pl-10 text-sm rounded-full bg-bButtonDark text-bBright caret-bLightPurple"
                    placeholder={placeholder} value={keyword} onChange={e => setKeyword(e.target.value)}/>
         </div>
     )

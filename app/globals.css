@@ -38,3 +38,7 @@ html, body, main {
     background-color: #1A1820;
     font-family: openSansMedium, sans-serif;
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
