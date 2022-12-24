@@ -6,8 +6,8 @@ const Connectors = () => {
 
     return (
         <div className='h-full w-[600px] bg-bLight border-r-2 border-r-bPurple'>
-            <p className='text-bBright text-3xl mb-4 mt-8 mx-8'>Connectors</p>
-            <SearchInput className='mb-6 mx-8' placeholder='Search connectors...'/>
+            <p className='text-bBright text-3xl mb-5 mt-8 mx-8'>Connectors</p>
+            <SearchInput className='mb-7 mx-8' placeholder='Search connectors...'/>
             <TabBar tabs={[
                 {
                     id: randomUUID(),

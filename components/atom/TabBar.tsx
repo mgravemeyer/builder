@@ -17,7 +17,7 @@ const TabBar = ({ tabs } : TabBarProps) => {
 
     return (
         <div className='flex flex-col'>
-            <div className='flex flex-row'>
+            <div className='flex flex-row px-1'>
                 {tabs.map(tab => {
                     return (
                         <div className='flex flex-row justify-evenly w-full' key={tab.id}>
