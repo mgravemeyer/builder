@@ -2,7 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "openSansExtraBold";
+    src: url("../public/opensans/OpenSans-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "openSansBold";
+    src: url("../public/opensans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "openSansSemiBold";
+    src: url("../public/opensans/OpenSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "openSansMedium";
+    src: url("../public/opensans/OpenSans-Medium.ttf");
+}
+
+@font-face {
+    font-family: "openSansRegular";
+    src: url("../public/opensans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "openSansLight";
+    src: url("../public/opensans/OpenSans-Light.ttf");
+}
+
 html, body, main {
     width: 100%;
     height: 100%;
+    background-color: #1A1820;
+    font-family: openSansMedium, sans-serif;
 }
