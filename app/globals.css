@@ -42,3 +42,25 @@ html, body, main {
 textarea:focus, input:focus{
     outline: none;
 }
+
+.react-flow__node {
+    @apply bg-bLight !important;
+    @apply border-bPurple !important;
+    @apply px-4 !important;
+    @apply py-2 !important;
+    @apply rounded-xl !important;
+    @apply text-bBright !important;
+}
+
+.react-flow__handle {
+    @apply bg-bBright;
+    @apply rounded-full;
+}
+
+.react-flow__attribution {
+    display: none;
+}
+
+.react-flow__panel {
+    background-color: #1A1820 !important;
+}

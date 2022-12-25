@@ -7,7 +7,7 @@ const Page = () => {
     return (
         <div className='flex flex-col w-full h-full'>
             <Header/>
-            <div className='w-full h-full bg-bDark flex justify-between'>
+            <div className='w-full h-full flex justify-between'>
                 <Connectors/>
                 <Grid/>
                 {/*<Detail/>*/}
