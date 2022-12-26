@@ -1,7 +1,7 @@
 'use client';
 
 import 'reactflow/dist/base.css';
-import { useCallback } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import ReactFlow, {
     addEdge,
@@ -15,14 +15,8 @@ import ReactFlow, {
     Position,
     Node,
 } from 'reactflow';
-import { Connector } from '../../../types/types';
 
-type GridProps = {
-    connectors: Node<[]>[],
-    onChange: any
-}
-
-const Grid = ({ connectors, onChange } : GridProps) => {
+const Grid = () => {
 
     const initialEdges = [
         {
@@ -42,20 +36,68 @@ const Grid = ({ connectors, onChange } : GridProps) => {
         },
     ];
 
+    const nodeDefaults = {
+        sourcePosition: Position.Right,
+        targetPosition: Position.Left,
+    };
+
+    const initialNodes = [
+        {
+            id: '1',
+            position: {x: 0, y: 150},
+            data: {label: 'base style 1'},
+            ...nodeDefaults,
+        },
+        {id: '2', position: {x: 250, y: 0}, data: {label: 'base style 2'}, ...nodeDefaults},
+        {id: '3', position: {x: 250, y: 150}, data: {label: 'base style 2'}, ...nodeDefaults},
+        {id: '4', position: {x: 250, y: 300}, data: {label: 'base style 2'}, ...nodeDefaults},
+    ];
+
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    const [reactFlowInstance, setReactFlowInstance] = useState(null);
+
+    const reactFlowWrapper = useRef(null);
+
+    const onDrop = (event: any) => {
+        let id = event.dataTransfer.getData("id");
+
+        if(!reactFlowWrapper.current) return;
+
+        //@ts-ignore
+        const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
+
+        if(!reactFlowInstance) return;
+
+        console.log(event.target.getBoundingClientRect())
+
+        //@ts-ignore
+        const position = reactFlowInstance.project({
+            x: event.clientX - reactFlowBounds.left,
+            y: event.clientY - reactFlowBounds.top,
+        });
+
+        const test = {id: Math.random().toString(), position: {x: position.x, y: position.y}, data: {label: `${id}`}};
+
+        console.log(test)
+        setNodes(nodes => [...nodes, test])
+    }
 
 
     const onConnect = useCallback((params: Edge<any> | Connection) => setEdges((els) => addEdge(params, els)), []);
 
     return (
         <ReactFlow
+            ref={reactFlowWrapper}
             style={{  }}
-            nodes={connectors}
+            nodes={nodes}
             edges={edges}
-            onNodesChange={onChange}
-            onEdgesChange={onEdgesChange}
+            onNodesChange={onNodesChange}
             onConnect={onConnect}
             fitView
+            onDragOver={(event)=> event.preventDefault()}
+            onDrop={(event)=> onDrop(event)}
+            onInit={setReactFlowInstance}
         >
             <Background />
             <Controls />

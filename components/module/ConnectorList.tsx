@@ -11,7 +11,7 @@ const ConnectorList = ({connectors}: ConnectorListProps) => {
         <div className='px-6 mt-2'>
             {connectors.map(connector => {
                 return (
-                    <ConnectorRow key={connector.id} name={connector.name}/>
+                    <ConnectorRow key={connector.id} connector={connector} />
                 )
             })}
         </div>

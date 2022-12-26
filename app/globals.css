@@ -64,3 +64,12 @@ textarea:focus, input:focus{
 .react-flow__panel {
     background-color: #1A1820 !important;
 }
+
+.react-flow__node {
+    max-width: 200px !important;
+    min-width: 200px !important;
+    width: 330px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}

@@ -12,7 +12,8 @@ const Connectors = () => {
                 {
                     id: '1',
                     name: 'Core',
-                    content: <ConnectorList
+                    content:
+                    <ConnectorList
                         key={'test'}
                         connectors={
                             [
