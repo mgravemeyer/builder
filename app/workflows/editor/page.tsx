@@ -1,6 +1,6 @@
 'use client';
 
-import Header from '../../../components/module/editor/Header';
+import EditorHeader from '../../../components/module/editor/EditorHeader';
 import ConnectorsPanel from '../../../components/module/editor/ConnectorsPanel';
 import GridEditor from '../../../components/module/editor/GridEditor';
 import DetailPanel from '../../../components/module/editor/DetailPanel';
@@ -8,7 +8,7 @@ import DetailPanel from '../../../components/module/editor/DetailPanel';
 const Page = () => {
   return (
     <div className='flex flex-col w-full h-full'>
-      <Header />
+      <EditorHeader />
       <div className='w-full h-full flex justify-between'>
         <ConnectorsPanel />
         <GridEditor />

@@ -1,6 +1,6 @@
 import { FiArrowLeft } from 'react-icons/fi';
 
-const Header = () => {
+const EditorHeader = () => {
   return (
     <div className='h-32 w-full border-b-[2px] border-b-bPurple flex flex-row items-center'>
       <div className='relative flex justify-center items-center p-5 ml-7 cursor-pointer'>
@@ -18,4 +18,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default EditorHeader;
