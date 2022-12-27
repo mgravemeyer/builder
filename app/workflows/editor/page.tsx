@@ -3,6 +3,7 @@
 import Header from '../../../components/module/editor/Header';
 import ConnectorsPanel from '../../../components/module/editor/ConnectorsPanel';
 import GridEditor from '../../../components/module/editor/GridEditor';
+import DetailPanel from '../../../components/module/editor/DetailPanel';
 
 const Page = () => {
 
@@ -12,7 +13,7 @@ const Page = () => {
             <div className='w-full h-full flex justify-between'>
                 <ConnectorsPanel/>
                 <GridEditor/>
-                {/*<Detail/>*/}
+                <DetailPanel/>
             </div>
         </div>
     )
