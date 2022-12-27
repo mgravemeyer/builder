@@ -1,10 +1,8 @@
 'use client';
 
-import Connectors from './connectors';
-import Detail from './detail';
-import Grid from './grid';
-import Header from '../../../components/module/Header';
-import {Position, useNodesState} from 'reactflow';
+import Header from '../../../components/module/editor/Header';
+import ConnectorsPanel from '../../../components/module/editor/ConnectorsPanel';
+import GridEditor from '../../../components/module/editor/GridEditor';
 
 const Page = () => {
 
@@ -12,8 +10,8 @@ const Page = () => {
         <div className='flex flex-col w-full h-full'>
             <Header/>
             <div className='w-full h-full flex justify-between'>
-                <Connectors/>
-                <Grid/>
+                <ConnectorsPanel/>
+                <GridEditor/>
                 {/*<Detail/>*/}
             </div>
         </div>

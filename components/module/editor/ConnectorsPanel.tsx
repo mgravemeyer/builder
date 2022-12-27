@@ -1,8 +1,8 @@
 import SearchInput from '../../../components/atom/SearchInput';
 import TabBar from '../../../components/atom/TabBar';
-import ConnectorList from '../../../components/module/ConnectorList';
+import ConnectorList from './ConnectorList';
 
-const Connectors = () => {
+const ConnectorsPanel = () => {
 
     return (
         <div className='h-full w-[500px] bg-bLight border-r-[2px] border-r-bPurple'>
@@ -57,4 +57,4 @@ const Connectors = () => {
     )
 }
 
-export default Connectors;
+export default ConnectorsPanel;

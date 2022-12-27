@@ -1,4 +1,4 @@
-const Detail = () => {
+const DetailPanel = () => {
 
     return (
         <div className='h-full w-80 bg-bLight border-l-2 border-l-bPurple p-5'>
@@ -7,4 +7,4 @@ const Detail = () => {
     )
 }
 
-export default Detail;
+export default DetailPanel;

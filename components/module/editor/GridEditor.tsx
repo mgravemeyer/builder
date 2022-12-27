@@ -12,11 +12,10 @@ import ReactFlow, {
     useEdgesState,
     Connection,
     Edge,
-    Position,
-    Node,
+    Position
 } from 'reactflow';
 
-const Grid = () => {
+const GridEditor = () => {
 
     const initialEdges = [
         {
@@ -54,8 +53,8 @@ const Grid = () => {
     ];
 
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-    const [reactFlowInstance, setReactFlowInstance] = useState(null);
+    const [edges, setEdges] = useEdgesState(initialEdges);
+    const [reactFlowInstance, setReactFlowInstance] = useState<any>(null);
 
     const reactFlowWrapper = useRef(null);
 
@@ -84,7 +83,7 @@ const Grid = () => {
     }
 
 
-    const onConnect = useCallback((params: Edge<any> | Connection) => setEdges((els) => addEdge(params, els)), []);
+    const onConnect = useCallback((params: Edge | Connection) => setEdges((els) => addEdge(params, els)), [setEdges]);
 
     return (
         <ReactFlow
@@ -106,4 +105,4 @@ const Grid = () => {
     );
 }
 
-export default Grid;
+export default GridEditor;

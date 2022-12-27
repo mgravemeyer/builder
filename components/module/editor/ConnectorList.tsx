@@ -1,5 +1,5 @@
-import { Connector } from '../../types/types';
-import ConnectorRow from '../atom/ConnectorRow';
+import { Connector } from '../../../types/types';
+import ConnectorRow from '../../atom/ConnectorRow';
 import React from "react";
 
 type ConnectorListProps = {
