@@ -13,12 +13,12 @@ import ReactFlow, {
   useEdgesState,
   Connection,
   Edge,
-  SmoothStepEdgeType,
   Position,
   Node,
+  ConnectionLineType,
 } from 'reactflow';
 
-const GridEditor = () => {
+const GridEditor = ({ setSelectedNodeId }: { setSelectedNodeId: any }) => {
   const nodeDefaults = {
     sourcePosition: Position.Right,
     targetPosition: Position.Left,
@@ -55,7 +55,7 @@ const GridEditor = () => {
     const test = {
       id: Math.random().toString(),
       type: 'textUpdater',
-      position: { x: position.x, y: position.y },
+      position: { x: position.x - 50, y: position.y },
       data: { label: `${id}`, id: `${id}` },
     };
 
@@ -64,16 +64,25 @@ const GridEditor = () => {
   };
 
   const onConnect = useCallback(
-    (params: Edge | Connection) => setEdges((els) => addEdge(params, els)),
+    (params: Edge | Connection) =>
+      setEdges((els) => addEdge({ ...params, type: 'smoothstep' }, els)),
     [setEdges],
   );
+
+  const onNodeClick = (node: any) => {
+    setSelectedNodeId(node.data.label);
+  };
 
   return (
     <div ref={reactFlowWrapper} className='w-full h-full'>
       <ReactFlow
         nodeTypes={nodeTypes}
         snapGrid={[20, 20]}
+        onNodeClick={(event, node) => onNodeClick(node)}
         snapToGrid={true}
+        nodesFocusable={false}
+        edgesFocusable={false}
+        connectionLineType={ConnectionLineType.SmoothStep}
         minZoom={1}
         ref={reactFlowWrapper}
         nodes={nodes}

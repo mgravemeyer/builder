@@ -1,86 +1,14 @@
-import {
-  FiMail,
-  FiMenu,
-  FiClock,
-  FiMousePointer,
-  FiBell,
-  FiGithub,
-  FiGitMerge,
-  FiMessageCircle,
-} from 'react-icons/fi';
 import { NodeType } from '../types/types';
+import { triggersStandard } from './triggers/triggersStandard';
+import { triggersGitHub } from './triggers/triggersGitHub';
+import { coreStandard } from './core/coreStandard';
+import { helpersStandard } from './helpers/helpersStandard';
 
 const nodeTypes: NodeType[] = [
-  {
-    id: 'webhookTrigger',
-    name: 'Webhook',
-    icon: <FiBell size={24} />,
-    category: 'triggers',
-    subCategory: 'standard',
-    hasOutput: true,
-  },
-  {
-    id: 'timeRepeatTrigger',
-    name: 'Time Repeat',
-    icon: <FiClock size={24} />,
-    category: 'triggers',
-    subCategory: 'standard',
-    hasOutput: true,
-  },
-  {
-    id: 'buttonTrigger',
-    name: 'Button',
-    icon: <FiMousePointer size={24} />,
-    category: 'triggers',
-    subCategory: 'standard',
-    hasOutput: true,
-  },
-  {
-    id: 'gitNewIssueTrigger',
-    name: 'New Issue',
-    icon: <FiGithub size={24} />,
-    category: 'triggers',
-    subCategory: 'gitHub',
-    hasOutput: true,
-  },
-  {
-    id: 'sendEmail',
-    name: 'Send E-Mail',
-    icon: <FiMail size={24} />,
-    category: 'core',
-    subCategory: 'standard',
-    hasInput: true,
-    hasOutput: false,
-  },
-  {
-    id: 'sendSMS',
-    name: 'Send SMS',
-    icon: <FiMessageCircle size={24} />,
-    category: 'core',
-    subCategory: 'standard',
-    hasInput: true,
-    hasOutput: false,
-  },
-  {
-    id: 'booleanCondition',
-    name: 'Boolean',
-    icon: <FiGitMerge size={24} />,
-    category: 'helpers',
-    subCategory: 'standard',
-    hasInput: true,
-    hasOutput: false,
-    hasYes: true,
-    hasNo: true,
-  },
-  {
-    id: 'logResult',
-    name: 'Log result',
-    icon: <FiMenu size={24} />,
-    category: 'core',
-    subCategory: 'standard',
-    hasInput: true,
-    hasOutput: false,
-  },
+  ...triggersStandard,
+  ...triggersGitHub,
+  ...coreStandard,
+  ...helpersStandard,
 ];
 
 export default nodeTypes;

@@ -1,0 +1,32 @@
+import { FiMail, FiMenu, FiMessageCircle } from 'react-icons/fi';
+import { NodeType } from '../../types/types';
+
+export const coreStandard: NodeType[] = [
+  {
+    id: 'sendEmail',
+    name: 'Send E-Mail',
+    icon: <FiMail size={24} />,
+    category: 'core',
+    subCategory: 'standard',
+    hasInput: true,
+    hasOutput: false,
+  },
+  {
+    id: 'sendSMS',
+    name: 'Send SMS',
+    icon: <FiMessageCircle size={24} />,
+    category: 'core',
+    subCategory: 'standard',
+    hasInput: true,
+    hasOutput: false,
+  },
+  {
+    id: 'logResult',
+    name: 'Log result',
+    icon: <FiMenu size={24} />,
+    category: 'core',
+    subCategory: 'standard',
+    hasInput: true,
+    hasOutput: false,
+  },
+];

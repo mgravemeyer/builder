@@ -7,14 +7,14 @@ import DetailPanel from '../../../components/module/editor/DetailPanel';
 import { useState } from 'react';
 
 const Page = () => {
-  const [selectedNodeId, setSelectedNodeId] = useState<string>();
+  const [selectedNodeId, setSelectedNodeId] = useState<string>('');
 
   return (
     <div className='flex flex-col w-full h-full'>
       <EditorHeader />
       <div className='w-full h-full flex justify-between'>
         <ConnectorsPanel />
-        <GridEditor />
+        <GridEditor setSelectedNodeId={setSelectedNodeId} />
         <DetailPanel selectedNodeId={selectedNodeId} />
       </div>
     </div>
