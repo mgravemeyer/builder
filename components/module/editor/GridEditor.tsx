@@ -13,29 +13,12 @@ import ReactFlow, {
   useEdgesState,
   Connection,
   Edge,
+  SmoothStepEdgeType,
   Position,
   Node,
 } from 'reactflow';
 
 const GridEditor = () => {
-  const initialEdges = [
-    {
-      id: 'e1-2',
-      source: '1',
-      target: '2',
-    },
-    {
-      id: 'e1-3',
-      source: '1',
-      target: '3',
-    },
-    {
-      id: 'e1-4',
-      source: '1',
-      target: '4',
-    },
-  ];
-
   const nodeDefaults = {
     sourcePosition: Position.Right,
     targetPosition: Position.Left,
@@ -46,7 +29,7 @@ const GridEditor = () => {
   const reactFlowWrapper = useRef(null);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges] = useEdgesState(initialEdges);
+  const [edges, setEdges] = useEdgesState([]);
   const [reactFlowInstance, setReactFlowInstance] = useState<any>(null);
 
   const nodeTypes = useMemo(() => ({ textUpdater: TextUpdaterNode }), []);
@@ -89,13 +72,14 @@ const GridEditor = () => {
     <div ref={reactFlowWrapper} className='w-full h-full'>
       <ReactFlow
         nodeTypes={nodeTypes}
+        snapGrid={[20, 20]}
+        snapToGrid={true}
+        minZoom={1}
         ref={reactFlowWrapper}
-        style={{}}
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
         onConnect={onConnect}
-        fitView
         onDragOver={(event) => event.preventDefault()}
         onDrop={(event) => onDrop(event)}
         onInit={setReactFlowInstance}
