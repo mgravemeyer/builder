@@ -24,11 +24,11 @@ const TabBar = ({ tabs }: TabBarProps) => {
                 className='flex flex-col text-center cursor-pointer'
                 onClick={() => setSelected(tab.id)}
               >
-                <p className={tab.id === selected ? 'text-bBright' : 'text-bLightPurple'}>
+                <p className={tab.id === selected ? 'text-[black]' : 'text-bLightPurple'}>
                   {tab.name}
                 </p>
                 {tab.id === selected ? (
-                  <div className='bg-bBright w-16 h-[1px] w-full mt-4'></div>
+                  <div className='bg-[black] w-16 h-[2px] w-full mt-4'></div>
                 ) : null}
               </div>
             </div>

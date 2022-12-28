@@ -15,13 +15,13 @@ const ConnectorRow = ({ connector }: ConnectorRowProps) => {
       draggable
       onDragStart={(event) => onDragStart(event)}
     >
-      <div className='flex flex-row items-center gap-4 select-none'>
+      <div className='flex flex-row items-center gap-4 select-none text-[black]'>
         {connector.icon}
         <p>{connector.name}</p>
       </div>
       <div className='flex'>
-        <FiMoreVertical />
-        <FiMoreVertical className='ml-[-10px]' />
+        <FiMoreVertical color='black' />
+        <FiMoreVertical color='black' className='ml-[-10px]' />
       </div>
     </div>
   );

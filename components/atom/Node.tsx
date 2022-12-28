@@ -7,7 +7,11 @@ function TextUpdaterNode({ data }: { data: { id: string } }) {
 
   return (
     <>
-      <div className='flex flex-col justify-center items-center gap-2 border-bPurple border-[2px] rounded-xl w-[80px] h-[80px]'>
+      <div
+        className={`flex flex-col justify-center items-center gap-2 border-bPurple border-[1px] ${
+          node.category === 'triggers' ? 'rounded-full' : 'rounded-xl'
+        } w-[80px] h-[80px]`}
+      >
         {node?.hasInput ? (
           <Handle
             className="text-[8px] after:content-['→']"
@@ -20,7 +24,7 @@ function TextUpdaterNode({ data }: { data: { id: string } }) {
           <></>
         )}
         {node.icon}
-        <label className='text-[12px]' htmlFor='text'>
+        <label className='text-[10px] text-[black]' htmlFor='text'>
           {node.name}
         </label>
         {node?.hasYes ? (

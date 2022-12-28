@@ -5,7 +5,7 @@ export const triggersGitHub: NodeType[] = [
   {
     id: 'gitNewIssueTrigger',
     name: 'New Issue',
-    icon: <FiGithub size={24} />,
+    icon: <FiGithub size={24} color={'black'} />,
     category: 'triggers',
     subCategory: 'gitHub',
     hasOutput: true,

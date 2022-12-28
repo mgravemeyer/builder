@@ -5,7 +5,7 @@ export const helpersStandard: NodeType[] = [
   {
     id: 'booleanCondition',
     name: 'Boolean',
-    icon: <FiGitMerge size={24} />,
+    icon: <FiGitMerge size={24} color={'black'} />,
     category: 'helpers',
     subCategory: 'standard',
     hasInput: true,

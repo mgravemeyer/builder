@@ -1,20 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './app/*.tsx',
-    './app/**/*.tsx',
-    './app/**/**/*.tsx',
-    './components/**/*.tsx'
-  ],
+  content: ['./app/*.tsx', './app/**/*.tsx', './app/**/**/*.tsx', './components/**/*.tsx'],
   theme: {
     extend: {},
     colors: {
-      'bDark': '#17161D',
-      'bLight': '#1A1820',
-      'bBright': '#FFFFFF',
-      'bPurple': '#474658',
-      'bLightPurple': '#A3A2B2',
-      'bButtonDark': '#1F2029',
+      bDark: '#17161D',
+      bLight: 'white',
+      bBright: '#FFFFFF',
+
+      bPurple: '#E1E1E3',
+      // bPurple: '#113838',
+
+      bLightPurple: '#A3A2B2',
+      bButtonDark: '#1F2029',
     },
     fontFamily: {
       oSExtraBold: ['openSansExtraBold'],
@@ -23,7 +21,7 @@ module.exports = {
       oSMedium: ['openSansMedium'],
       oSRegular: ['openSansRegular'],
       oSLight: ['openSansLight'],
-    }
+    },
   },
   plugins: [],
-}
+};

@@ -5,7 +5,7 @@ export const triggersStandard: NodeType[] = [
   {
     id: 'webhookTrigger',
     name: 'Webhook',
-    icon: <FiBell size={24} />,
+    icon: <FiBell size={24} color={'black'} />,
     category: 'triggers',
     subCategory: 'standard',
     hasOutput: true,
@@ -13,7 +13,7 @@ export const triggersStandard: NodeType[] = [
   {
     id: 'timeRepeatTrigger',
     name: 'Time Repeat',
-    icon: <FiClock size={24} />,
+    icon: <FiClock size={24} color={'black'} />,
     category: 'triggers',
     subCategory: 'standard',
     hasOutput: true,
@@ -21,7 +21,7 @@ export const triggersStandard: NodeType[] = [
   {
     id: 'buttonTrigger',
     name: 'Button',
-    icon: <FiMousePointer size={24} />,
+    icon: <FiMousePointer size={24} color={'black'} />,
     category: 'triggers',
     subCategory: 'standard',
     hasOutput: true,
