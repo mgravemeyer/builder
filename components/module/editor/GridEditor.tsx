@@ -9,7 +9,6 @@ import ReactFlow, {
   MiniMap,
   Controls,
   Background,
-  useNodesState,
   useEdgesState,
   Connection,
   Edge,
@@ -17,11 +16,20 @@ import ReactFlow, {
 } from 'reactflow';
 import { ReactFlowInstance } from '@reactflow/core/dist/esm/types/instance';
 
-const GridEditor = ({ setSelectedNodeId }: { setSelectedNodeId: any }) => {
+const GridEditor = ({
+  setSelectedNodeId,
+  nodes,
+  setNodes,
+  onNodesChange,
+}: {
+  setSelectedNodeId: any;
+  nodes: any;
+  setNodes: any;
+  onNodesChange: any;
+}) => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance | null>(null);
 
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges] = useEdgesState([]);
 
   const nodeTypes = useMemo(() => ({ builderNode: BuilderNode }), []);
@@ -44,6 +52,7 @@ const GridEditor = ({ setSelectedNodeId }: { setSelectedNodeId: any }) => {
       data: { label: `${id}`, id: `${id}` },
     };
 
+    //@ts-ignore
     setNodes((nodes) => [...nodes, newNode]);
   };
 
