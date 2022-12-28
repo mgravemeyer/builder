@@ -2,7 +2,7 @@
 
 import 'reactflow/dist/base.css';
 import { useCallback, useRef, useState, useMemo } from 'react';
-import TextUpdaterNode from '../../atom/Node';
+import BuilderNode from '../../atom/Node';
 
 import ReactFlow, {
   addEdge,
@@ -13,54 +13,38 @@ import ReactFlow, {
   useEdgesState,
   Connection,
   Edge,
-  Position,
-  Node,
   ConnectionLineType,
 } from 'reactflow';
+import { ReactFlowInstance } from '@reactflow/core/dist/esm/types/instance';
 
 const GridEditor = ({ setSelectedNodeId }: { setSelectedNodeId: any }) => {
-  const nodeDefaults = {
-    sourcePosition: Position.Right,
-    targetPosition: Position.Left,
-  };
+  const reactFlowWrapper = useRef<HTMLDivElement>(null);
+  const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance | null>(null);
 
-  const initialNodes: Node<any>[] = [];
-
-  const reactFlowWrapper = useRef(null);
-
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges] = useEdgesState([]);
-  const [reactFlowInstance, setReactFlowInstance] = useState<any>(null);
 
-  const nodeTypes = useMemo(() => ({ textUpdater: TextUpdaterNode }), []);
+  const nodeTypes = useMemo(() => ({ builderNode: BuilderNode }), []);
 
   const onDrop = (event: any) => {
-    let id = event.dataTransfer.getData('id');
+    if (!reactFlowWrapper.current || !reactFlowInstance) return;
 
-    if (!reactFlowWrapper.current) return;
-
-    //@ts-ignore
     const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
-
-    if (!reactFlowInstance) return;
-
-    console.log(event.target.getBoundingClientRect());
-
-    //@ts-ignore
-    const position = reactFlowInstance.project({
+    const newNodePosition = reactFlowInstance.project({
       x: event.clientX - reactFlowBounds.left,
       y: event.clientY - reactFlowBounds.top,
     });
 
-    const test = {
+    let id = event.dataTransfer.getData('id');
+
+    const newNode = {
       id: Math.random().toString(),
-      type: 'textUpdater',
-      position: { x: position.x - 50, y: position.y },
+      type: 'builderNode',
+      position: { x: newNodePosition.x - 50, y: newNodePosition.y },
       data: { label: `${id}`, id: `${id}` },
     };
 
-    console.log(test);
-    setNodes((nodes) => [...nodes, test]);
+    setNodes((nodes) => [...nodes, newNode]);
   };
 
   const onConnect = useCallback(
@@ -70,7 +54,7 @@ const GridEditor = ({ setSelectedNodeId }: { setSelectedNodeId: any }) => {
   );
 
   const onNodeClick = (node: any) => {
-    setSelectedNodeId(node.data.label);
+    setSelectedNodeId(node.id);
   };
 
   return (

@@ -2,7 +2,7 @@
 import { Handle, Position } from 'reactflow';
 import nodeTypes from '../../data/nodeTypes';
 
-function TextUpdaterNode({ data }: { data: { id: string } }) {
+function BuilderNode({ data }: { data: { id: string } }) {
   const node = nodeTypes.filter((nodeType) => nodeType.id === data.id)[0]; //todo handle case where node can't be found
 
   return (
@@ -68,4 +68,4 @@ function TextUpdaterNode({ data }: { data: { id: string } }) {
   );
 }
 
-export default TextUpdaterNode;
+export default BuilderNode;
