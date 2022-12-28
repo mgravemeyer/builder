@@ -10,7 +10,7 @@ function TextUpdaterNode({ data }: { data: { id: string } }) {
       <div
         className={`flex flex-col justify-center items-center gap-2 border-bPurple border-[1px] ${
           node.category === 'triggers' ? 'rounded-full' : 'rounded-xl'
-        } w-[80px] h-[80px]`}
+        } w-[70px] h-[70px]`}
       >
         {node?.hasInput ? (
           <Handle
