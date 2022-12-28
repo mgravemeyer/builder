@@ -70,8 +70,8 @@ textarea:focus, input:focus{
 }
 
 .connectable {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +83,7 @@ textarea:focus, input:focus{
     background-color: white !important;
     @apply border-[1px];
     @apply border-bPurple;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .react-flow__handle-right {

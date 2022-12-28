@@ -35,7 +35,7 @@ const TabBar = ({ tabs }: TabBarProps) => {
           );
         })}
       </div>
-      <div className='h-1 h-[2px] w-full bg-bPurple'></div>
+      <div className='h-1 h-[1px] w-full bg-bPurple'></div>
       {tabs
         .filter((tab) => tab.id === selected)
         .map((tab) => {

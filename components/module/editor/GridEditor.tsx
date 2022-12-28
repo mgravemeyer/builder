@@ -74,10 +74,10 @@ const GridEditor = ({ setSelectedNodeId }: { setSelectedNodeId: any }) => {
   };
 
   return (
-    <div ref={reactFlowWrapper} className='w-full h-full'>
+    <div ref={reactFlowWrapper} className='h-full w-full'>
       <ReactFlow
         nodeTypes={nodeTypes}
-        snapGrid={[20, 20]}
+        snapGrid={[15, 15]}
         onNodeClick={(event, node) => onNodeClick(node)}
         snapToGrid={true}
         nodesFocusable={false}
