@@ -15,7 +15,7 @@ const ConnectorRow = ({ connector }: ConnectorRowProps) => {
       draggable
       onDragStart={(event) => onDragStart(event)}
     >
-      <div className='flex flex-row gap-4 select-none'>
+      <div className='flex flex-row items-center gap-4 select-none'>
         {connector.icon}
         <p>{connector.name}</p>
       </div>
