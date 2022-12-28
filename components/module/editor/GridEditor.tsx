@@ -2,7 +2,7 @@
 
 import 'reactflow/dist/base.css';
 import { useCallback, useRef, useState, useMemo } from 'react';
-import BuilderNode from '../../atom/Node';
+import BuilderNode from '../../atom/BuilderNode';
 
 import ReactFlow, {
   addEdge,
