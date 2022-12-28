@@ -1,7 +1,8 @@
 'use client';
 
 import 'reactflow/dist/base.css';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, useMemo } from 'react';
+import TextUpdaterNode from '../../atom/Node';
 
 import ReactFlow, {
   addEdge,
@@ -13,6 +14,7 @@ import ReactFlow, {
   Connection,
   Edge,
   Position,
+  Node,
 } from 'reactflow';
 
 const GridEditor = () => {
@@ -39,23 +41,15 @@ const GridEditor = () => {
     targetPosition: Position.Left,
   };
 
-  const initialNodes = [
-    {
-      id: '1',
-      position: { x: 0, y: 150 },
-      data: { label: 'base style 1' },
-      ...nodeDefaults,
-    },
-    { id: '2', position: { x: 250, y: 0 }, data: { label: 'base style 2' }, ...nodeDefaults },
-    { id: '3', position: { x: 250, y: 150 }, data: { label: 'base style 2' }, ...nodeDefaults },
-    { id: '4', position: { x: 250, y: 300 }, data: { label: 'base style 2' }, ...nodeDefaults },
-  ];
+  const initialNodes: Node<any>[] = [];
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges] = useEdgesState(initialEdges);
   const [reactFlowInstance, setReactFlowInstance] = useState<any>(null);
 
   const reactFlowWrapper = useRef(null);
+
+  const nodeTypes = useMemo(() => ({ textUpdater: TextUpdaterNode }), []);
 
   const onDrop = (event: any) => {
     let id = event.dataTransfer.getData('id');
@@ -77,8 +71,9 @@ const GridEditor = () => {
 
     const test = {
       id: Math.random().toString(),
+      type: 'textUpdater',
       position: { x: position.x, y: position.y },
-      data: { label: `${id}` },
+      data: { label: `${id}`, id: `${id}` },
     };
 
     console.log(test);
@@ -92,6 +87,7 @@ const GridEditor = () => {
 
   return (
     <ReactFlow
+      nodeTypes={nodeTypes}
       ref={reactFlowWrapper}
       style={{}}
       nodes={nodes}

@@ -1,9 +1,9 @@
-import { Connector } from '../../../types/types';
+import { NodeType } from '../../../types/types';
 import ConnectorRow from '../../atom/ConnectorRow';
 import React from 'react';
 
 type ConnectorListProps = {
-  connectors: Connector[];
+  connectors: NodeType[];
 };
 
 const ConnectorList = ({ connectors }: ConnectorListProps) => {

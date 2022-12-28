@@ -1,6 +1,7 @@
 import SearchInput from '../../../components/atom/SearchInput';
 import TabBar from '../../../components/atom/TabBar';
 import ConnectorList from './ConnectorList';
+import nodeTypes from '../../../data/nodeTypes';
 
 const ConnectorsPanel = () => {
   return (
@@ -12,25 +13,7 @@ const ConnectorsPanel = () => {
           {
             id: '1',
             name: 'Core',
-            content: (
-              <ConnectorList
-                key={'test'}
-                connectors={[
-                  {
-                    id: '1',
-                    name: 'Boolean Condition',
-                  },
-                  {
-                    id: '2',
-                    name: 'Script',
-                  },
-                  {
-                    id: '3',
-                    name: 'HTTP Client',
-                  },
-                ]}
-              />
-            ),
+            content: <ConnectorList key={'test'} connectors={nodeTypes} />,
           },
           {
             id: '2',
