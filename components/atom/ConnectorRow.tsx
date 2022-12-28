@@ -11,7 +11,7 @@ const ConnectorRow = ({ connector }: ConnectorRowProps) => {
 
   return (
     <div
-      className='mt-4 flex h-16 w-full cursor-grab items-center justify-between rounded-xl border-[1px] border-bPurple bg-bLight pl-5 pr-3 text-bBright'
+      className='mt-4 flex h-16 w-full cursor-grab items-center justify-between rounded-xl border-[1.5px] border-bPurple bg-bLight pl-5 pr-3 text-bBright'
       draggable
       onDragStart={(event) => onDragStart(event)}
     >

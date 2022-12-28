@@ -9,14 +9,14 @@ const DetailPanel = ({ selectedNodeId }: DetailPanelProps) => {
 
   if (node) {
     return (
-      <div className='h-full w-80 border-l-[1px] border-l-bPurple bg-bLight p-5'>
+      <div className='h-full w-80 border-l-[1.5px] border-l-bPurple bg-bLight p-5'>
         <p className='text-[black]'>{node.name}</p>
       </div>
     );
   }
 
   return (
-    <div className='h-full w-80 border-l-[1px] border-l-bPurple bg-bLight p-5'>
+    <div className='h-full w-80 border-l-[1.5px] border-l-bPurple bg-bLight p-5'>
       <p className='text-[black]'>test</p>
     </div>
   );
