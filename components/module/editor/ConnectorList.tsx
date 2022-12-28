@@ -1,4 +1,4 @@
-import { NodeType } from '../../../types/types';
+import { NodeType, NodeSubCategory } from '../../../types/types';
 import ConnectorRow from '../../atom/ConnectorRow';
 import React from 'react';
 

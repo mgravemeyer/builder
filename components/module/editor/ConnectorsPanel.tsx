@@ -12,23 +12,43 @@ const ConnectorsPanel = () => {
         tabs={[
           {
             id: '1',
-            name: 'Core',
-            content: <ConnectorList key={'test'} connectors={nodeTypes} />,
+            name: 'Triggers',
+            content: (
+              <ConnectorList
+                key={'triggers'}
+                connectors={nodeTypes.filter((element) => element.category === 'triggers')}
+              />
+            ),
           },
           {
             id: '2',
-            name: 'Triggers',
-            content: <p key='test'>test2</p>,
+            name: 'Core',
+            content: (
+              <ConnectorList
+                key={'core'}
+                connectors={nodeTypes.filter((element) => element.category === 'core')}
+              />
+            ),
           },
           {
             id: '3',
             name: 'Helpers',
-            content: <p key='test'>test3</p>,
+            content: (
+              <ConnectorList
+                key={'triggers'}
+                connectors={nodeTypes.filter((element) => element.category === 'helpers')}
+              />
+            ),
           },
           {
             id: '4',
             name: 'Services',
-            content: <p key='test'>test4</p>,
+            content: (
+              <ConnectorList
+                key={'triggers'}
+                connectors={nodeTypes.filter((element) => element.category === 'services')}
+              />
+            ),
           },
         ]}
       />
