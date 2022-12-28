@@ -10,9 +10,9 @@ const Page = () => {
   const [selectedNodeId, setSelectedNodeId] = useState<string>('');
 
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className='flex h-full w-full flex-col'>
       <EditorHeader />
-      <div className='w-full h-full flex justify-between'>
+      <div className='flex h-full w-full justify-between'>
         <ConnectorsPanel />
         <GridEditor setSelectedNodeId={setSelectedNodeId} />
         <DetailPanel selectedNodeId={selectedNodeId} />

@@ -8,9 +8,9 @@ function TextUpdaterNode({ data }: { data: { id: string } }) {
   return (
     <>
       <div
-        className={`flex flex-col justify-center items-center gap-2 border-bPurple border-[1px] ${
+        className={`flex flex-col items-center justify-center gap-2 border-[1px] border-bPurple ${
           node.category === 'triggers' ? 'rounded-full' : 'rounded-xl'
-        } w-[70px] h-[70px]`}
+        } h-[70px] w-[70px]`}
       >
         {node?.hasInput ? (
           <Handle

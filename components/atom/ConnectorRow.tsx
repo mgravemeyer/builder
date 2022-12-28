@@ -1,4 +1,4 @@
-import { FiCodesandbox, FiMoreVertical } from 'react-icons/fi';
+import { FiMoreVertical } from 'react-icons/fi';
 import { NodeType } from '../../types/types';
 
 type ConnectorRowProps = {
@@ -11,11 +11,11 @@ const ConnectorRow = ({ connector }: ConnectorRowProps) => {
 
   return (
     <div
-      className='w-full h-16 bg-bLight text-bBright border-bPurple border-[2px] rounded-xl flex justify-between pl-5 pr-3 items-center mt-4 cursor-grab'
+      className='mt-4 flex h-16 w-full cursor-grab items-center justify-between rounded-xl border-[2px] border-bPurple bg-bLight pl-5 pr-3 text-bBright'
       draggable
       onDragStart={(event) => onDragStart(event)}
     >
-      <div className='flex flex-row items-center gap-4 select-none text-[black]'>
+      <div className='flex select-none flex-row items-center gap-4 text-[black]'>
         {connector.icon}
         <p>{connector.name}</p>
       </div>

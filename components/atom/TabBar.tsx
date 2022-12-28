@@ -19,23 +19,23 @@ const TabBar = ({ tabs }: TabBarProps) => {
       <div className='flex flex-row px-1'>
         {tabs.map((tab) => {
           return (
-            <div className='flex flex-row justify-evenly w-full' key={tab.id}>
+            <div className='flex w-full flex-row justify-evenly' key={tab.id}>
               <div
-                className='flex flex-col text-center cursor-pointer'
+                className='flex cursor-pointer flex-col text-center'
                 onClick={() => setSelected(tab.id)}
               >
                 <p className={tab.id === selected ? 'text-[black]' : 'text-bLightPurple'}>
                   {tab.name}
                 </p>
                 {tab.id === selected ? (
-                  <div className='bg-[black] w-16 h-[2px] w-full mt-4'></div>
+                  <div className='mt-4 h-[2px] w-16 w-full bg-[black]'></div>
                 ) : null}
               </div>
             </div>
           );
         })}
       </div>
-      <div className='w-full h-1 bg-bPurple h-[2px]'></div>
+      <div className='h-1 h-[2px] w-full bg-bPurple'></div>
       {tabs
         .filter((tab) => tab.id === selected)
         .map((tab) => {

@@ -13,10 +13,10 @@ const SearchInput = ({ className, placeholder }: SearchInputProps) => {
 
   return (
     <div className={'relative ' + className}>
-      <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+      <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
         <svg
           aria-hidden='true'
-          className='w-5 h-5'
+          className='h-5 w-5'
           fill='none'
           viewBox='0 0 24 24'
           xmlns='http://www.w3.org/2000/svg'
@@ -33,7 +33,7 @@ const SearchInput = ({ className, placeholder }: SearchInputProps) => {
       <input
         type='search'
         id='search'
-        className='w-full p-4 pl-10 text-sm border-bPurple border-[1px] rounded-full bg-[white] text-[black] caret-[black]'
+        className='w-full rounded-full border-[1px] border-bPurple bg-[white] p-4 pl-10 text-sm text-[black] caret-[black]'
         placeholder={placeholder}
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
