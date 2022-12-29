@@ -14,13 +14,13 @@ const DetailPanel = ({ selectedNodeId, nodes, setNodes }: DetailPanelProps) => {
     setNodes(arrayCopy);
   };
 
-  if (node?.data?.label) {
+  if (node?.data?.id) {
     return (
-      <div className='h-full w-80 border-l-[1.5px] border-l-bPurple bg-bLight p-5'>
-        <p className='text-[black]'>{node.data.label}</p>
+      <div className='h-full min-w-[400px] border-l-[1.5px] border-l-bPurple bg-bLight p-5'>
+        <p className='text-3xl text-[black]'>{node.data.id}</p>
         <input
           className='bg-bLightPurple text-[black]'
-          value={node.data.label}
+          value={node.data.id}
           onChange={(event) => updateNodeLabel(event.target.value)}
         ></input>
       </div>
@@ -28,7 +28,7 @@ const DetailPanel = ({ selectedNodeId, nodes, setNodes }: DetailPanelProps) => {
   }
 
   return (
-    <div className='h-full w-80 border-l-[1.5px] border-l-bPurple bg-bLight p-5'>
+    <div className='h-full min-w-[400px] border-l-[1.5px] border-l-bPurple bg-bLight p-5'>
       <p className='text-[black]'>test</p>
     </div>
   );

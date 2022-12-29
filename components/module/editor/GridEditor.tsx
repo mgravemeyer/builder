@@ -49,7 +49,7 @@ const GridEditor = ({
       id: Math.random().toString(),
       type: 'builderNode',
       position: { x: newNodePosition.x - 50, y: newNodePosition.y },
-      data: { label: `${id}`, id: `${id}` },
+      data: { id: `${id}` },
     };
 
     //@ts-ignore

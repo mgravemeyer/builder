@@ -5,8 +5,8 @@ import nodeTypes from '../../../data/nodeTypes';
 
 const ConnectorsPanel = () => {
   return (
-    <div className='h-full w-[500px] border-r-[1.5px] border-r-bPurple bg-bLight'>
-      <p className='mx-8 mb-5 mt-8 text-2xl text-bBright'>Connectors</p>
+    <div className='h-full min-w-[350px] border-r-[1.5px] border-r-bPurple bg-bLight'>
+      <p className='mx-8 mb-5 mt-8 text-2xl text-[black]'>Connectors</p>
       <SearchInput className='mx-8 mb-7' placeholder='Search connectors...' />
       <TabBar
         tabs={[
