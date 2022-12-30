@@ -1,7 +1,7 @@
 import { NodeType } from '../../types/types';
 import { FiBell, FiClock, FiMousePointer } from 'react-icons/fi';
 
-export const triggersStandard: NodeType[] = [
+export const standard: NodeType[] = [
   {
     id: 'webhookTrigger',
     name: 'Webhook',

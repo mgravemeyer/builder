@@ -2,6 +2,7 @@
 
 import { Handle, Position } from 'reactflow';
 import nodeTypes from '../../data/nodeTypes';
+import { FiArrowRight, FiCheck, FiX } from 'react-icons/fi';
 
 const NodeConnector = ({
   id,
@@ -11,19 +12,21 @@ const NodeConnector = ({
   type,
 }: {
   id: string;
-  symbol: string;
+  symbol: JSX.Element;
   topOffset: number;
   position: Position;
   type: 'target' | 'source';
 }) => {
   return (
     <Handle
-      className={`text-[8px] after:content-['${symbol}']`}
+      className={'text-[8px]'}
       style={{ backgroundColor: '#474658', top: `${topOffset}px` }}
       type={type}
       position={position}
       id={id}
-    />
+    >
+      {symbol}
+    </Handle>
   );
 };
 
@@ -40,7 +43,7 @@ const BuilderNode = ({ data }: { data: { id: string } }) => {
         {node?.hasInput && (
           <NodeConnector
             id={'input'}
-            symbol={'→'}
+            symbol={<FiArrowRight color='black' style={{ pointerEvents: 'none' }} />}
             topOffset={27}
             position={Position.Left}
             type={'target'}
@@ -50,7 +53,7 @@ const BuilderNode = ({ data }: { data: { id: string } }) => {
         {node?.hasYes && (
           <NodeConnector
             id={'yes'}
-            symbol={'✓'}
+            symbol={<FiCheck color='black' style={{ pointerEvents: 'none' }} />}
             topOffset={14}
             position={Position.Right}
             type={'source'}
@@ -59,7 +62,7 @@ const BuilderNode = ({ data }: { data: { id: string } }) => {
         {node?.hasNo && (
           <NodeConnector
             id={'no'}
-            symbol={'✗'}
+            symbol={<FiX color='black' style={{ pointerEvents: 'none' }} />}
             topOffset={37}
             position={Position.Right}
             type={'source'}
@@ -68,7 +71,7 @@ const BuilderNode = ({ data }: { data: { id: string } }) => {
         {node?.hasOutput && (
           <NodeConnector
             id={'output'}
-            symbol={'→'}
+            symbol={<FiArrowRight color='black' style={{ pointerEvents: 'none' }} />}
             topOffset={27}
             position={Position.Right}
             type={'source'}

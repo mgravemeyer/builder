@@ -1,7 +1,7 @@
 import { FiGithub } from 'react-icons/fi';
 import { NodeType } from '../../types/types';
 
-export const triggersGitHub: NodeType[] = [
+export const gitHub: NodeType[] = [
   {
     id: 'gitNewIssueTrigger',
     name: 'New Issue',

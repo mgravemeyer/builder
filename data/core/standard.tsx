@@ -1,7 +1,7 @@
 import { FiMail, FiMenu, FiMessageCircle, FiClock } from 'react-icons/fi';
 import { NodeType } from '../../types/types';
 
-export const coreStandard: NodeType[] = [
+export const standard: NodeType[] = [
   {
     id: 'sendEmail',
     name: 'Send E-Mail',

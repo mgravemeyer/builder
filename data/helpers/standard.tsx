@@ -1,7 +1,7 @@
 import { FiGitMerge } from 'react-icons/fi';
 import { NodeType } from '../../types/types';
 
-export const helpersStandard: NodeType[] = [
+export const standard: NodeType[] = [
   {
     id: 'booleanCondition',
     name: 'Boolean',
