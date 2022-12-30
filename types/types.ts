@@ -11,4 +11,4 @@ export type NodeType = {
 };
 
 export type NodeCategory = 'core' | 'triggers' | 'helpers' | 'services';
-export type NodeSubCategory = 'standard' | 'gitHub' | 'shopware';
+export type NodeSubCategory = 'standard' | 'gitHub' | 'shopware' | 'jira';
