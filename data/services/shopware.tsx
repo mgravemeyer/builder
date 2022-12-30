@@ -29,4 +29,13 @@ export const shopware: NodeType[] = [
     hasInput: true,
     hasOutput: true,
   },
+  {
+    id: 'shopwareCheckNewOrder',
+    name: 'Check for new Order',
+    icon: <SiShopware size={24} color={'black'} />,
+    category: 'services',
+    subCategory: 'shopware',
+    hasInput: true,
+    hasOutput: true,
+  },
 ];

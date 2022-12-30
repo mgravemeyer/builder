@@ -79,7 +79,7 @@ const BuilderNode = ({ data }: { data: { id: string; customName: string } }) => 
         )}
       </div>
       <label
-        className='w-18 absolute top-[50px] flex w-20 items-center justify-center text-[10px] text-[black]'
+        className='w-18 absolute top-[50px] flex w-20 items-center justify-center text-center text-[10px] text-[black]'
         htmlFor='text'
       >
         {data.customName !== '' ? data.customName : node.name}
