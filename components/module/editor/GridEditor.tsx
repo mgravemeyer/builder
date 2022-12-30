@@ -3,6 +3,7 @@
 import 'reactflow/dist/base.css';
 import { useCallback, useRef, useState, useMemo } from 'react';
 import BuilderNode from '../../atom/BuilderNode';
+import { default as nodeTypesArray } from '../../../data/nodeTypes';
 
 import ReactFlow, {
   addEdge,
@@ -45,11 +46,17 @@ const GridEditor = ({
 
     let id = event.dataTransfer.getData('id');
 
+    const nodeData = nodeTypesArray.filter((node) => node.id === id)[0];
+    console.log(nodeData);
+
     const newNode = {
       id: Math.random().toString(),
       type: 'builderNode',
       position: { x: newNodePosition.x - 50, y: newNodePosition.y },
-      data: { id: `${id}` },
+      data: {
+        id: `${id}`,
+        customName: '',
+      },
     };
 
     //@ts-ignore

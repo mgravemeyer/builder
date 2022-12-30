@@ -30,7 +30,7 @@ const NodeConnector = ({
   );
 };
 
-const BuilderNode = ({ data }: { data: { id: string } }) => {
+const BuilderNode = ({ data }: { data: { id: string; customName: string } }) => {
   const node = nodeTypes.filter((nodeType) => nodeType.id === data.id)[0]; //todo handle case where node can't be found
 
   return (
@@ -82,7 +82,7 @@ const BuilderNode = ({ data }: { data: { id: string } }) => {
         className='w-18 absolute top-[50px] flex w-20 items-center justify-center text-[10px] text-[black]'
         htmlFor='text'
       >
-        {node.name}
+        {data.customName !== '' ? data.customName : node.name}
       </label>
     </div>
   );
