@@ -19,6 +19,12 @@ export const shopware: NodeType[] = [
     subCategory: 'shopware',
     hasInput: true,
     hasOutput: true,
+    inputFields: [
+      { type: 'textField', label: 'Title', value: '' },
+      { type: 'textField', label: 'Product number', value: '' },
+      { type: 'textField', label: 'Manufacturer ID', value: '' },
+      { type: 'textField', label: 'Description', value: '' },
+    ],
   },
   {
     id: 'shopwareCreateCustomer',
